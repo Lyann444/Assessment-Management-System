@@ -1,0 +1,127 @@
+/* ===== studentViewResult.jsp ===== */
+/* ===== Result Table ===== */
+.student-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: visible;
+}
+
+.result-table th {
+    background-color: #34495e;
+    color: #ffffff;
+    padding: 12px;
+    text-align: left;
+    position: relative;
+    padding-right: 20px;
+    white-space: nowrap;
+}
+
+.result-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.result-table tr:nth-child(even) {
+    background-color: #f6f8fa;
+}
+
+.result-table tr:hover {
+    background-color: #eef3f7;
+}
+
+.result-table.assessment-table {
+    margin-bottom: 40px; /* space before Final Results table */
+}
+
+.grade-A { color: #27ae60; font-weight: bold; }
+.grade-B { color: #2980b9; font-weight: bold; }
+.grade-C { color: #f39c12; font-weight: bold; }
+.grade-D { color: #d35400; font-weight: bold; }
+.grade-F { color: #e74c3c; font-weight: bold; }
+
+.result-actions {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.pdf-btn {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.pdf-btn:hover {
+    background-color: #16232b;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* ===== Sortable Columns ===== */
+/* default empty arrow */
+.result-table th::after {
+    content: '';
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+}
+
+/* Hover arrow on unsorted columns */
+.result-table th.sortable:not(.asc):not(.desc):hover::after {
+    content: '▼';
+    cursor: pointer;
+}
+
+/* Ascending / Descending arrows */
+.result-table th.asc::after {
+    content: '▲';
+}
+
+.result-table th.desc::after {
+    content: '▼';
+}
+
+/* This ensures the cloned table expands to the full width of your 1000px wrapper */
+#temp-pdf-container .result-table {
+    width: 100% !important;
+    box-shadow: none !important; /* Shadows look messy on PDF paper */
+    border: 1px solid #e0e0e0;   /* Add a simple border instead */
+}
+
+/* Hide sorting arrows in the PDF */
+#temp-pdf-container th::after {
+    display: none !important;
+}
+
+/* Assessment table */
+.assessment-table th:nth-child(2),
+.assessment-table td:nth-child(2) {
+    text-align: center;
+}
+.assessment-table th:nth-child(3),
+.assessment-table td:nth-child(3) {
+    text-align: center;
+}
+
+/* Final results table: Total Marks & Grade */
+.final-table th:nth-child(2),
+.final-table td:nth-child(2),
+.final-table th:nth-child(3),
+.final-table td:nth-child(3) {
+    text-align: center;
+}

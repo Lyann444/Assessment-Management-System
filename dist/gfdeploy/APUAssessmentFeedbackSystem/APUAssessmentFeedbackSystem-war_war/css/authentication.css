@@ -1,0 +1,226 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 20-Dec-2025, 00:17:49
+    Author     : USER
+*/
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #f5f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Login card */
+.login-card {
+    width: 460px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* Title */
+.login-card h1 {
+    margin: 0px 0px 25px 0px;
+    font-size: 32px;
+    text-align: center;
+}
+
+/* Form group */
+.form-group {
+    position: relative;
+    margin-bottom: 10px;
+}
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+}
+
+/* Focus effect */
+.form-group input:focus {
+    outline: none;
+    border-color: #2ecc71;
+}
+
+/* Password field wrapper */
+.password-wrapper {
+    position: relative;
+}
+
+/* Show / hide text */
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #1a73e8;
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle-password:hover {
+    text-decoration: underline;
+}
+
+/* Login button */
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.login-btn:hover {
+    background-color: #155fc2;
+}
+
+/* Bottom text */
+.bottom-text {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+}
+
+.bottom-text a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/*for register*/
+/* Two-column row */
+.form-row {
+    display: flex;
+    gap: 12px;
+}
+
+/* Two-column grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: 2fr 3.5fr;
+    gap: 5px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Dropdown styling */
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #2ecc71;
+}
+
+/* Floating tooltip */
+.tooltip {
+    position: absolute;
+    bottom: 110%;      
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 13px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 100;
+}
+
+/* Show floating tooltip */
+.tooltip.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Password rule list */
+.password-tooltip ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 6px;
+}
+
+.password-tooltip li {
+    margin-bottom: 4px;
+    color: #999;
+}
+
+.password-tooltip li.valid {
+    color: green;
+}
+
+.password-tooltip li.invalid {
+    color: red;
+}
+
+/* Global error popup */
+.global-popup {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background-color: #ffe6e6;
+    color: #a70000;
+    padding: 14px 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    font-size: 14px;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.global-popup.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.global-popup.success {
+    background-color: #e6ffed;
+    color: #1a7f37;
+}

@@ -1,0 +1,463 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.header {
+    height: 73px;
+    background: linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ), url("../images/header.jpg");
+    background-size: cover;
+    background-position: bottom;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header h1 {
+    font-size: 32px;
+}
+
+/* ===== LAYOUT ===== */
+.wrapper {
+    display: flex;
+    min-height: calc(100vh - 160px);
+}
+
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 230px;
+    background-color: #9CC6DB;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 85vh;
+    position: relative;
+}
+
+.sidebar img {
+    /*width: 120px;*/
+    width: 100px;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.sidebar p {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size:20px;
+}
+
+/* Logout button */
+.logout-btn {
+    margin-top: auto;
+    margin-bottom: 0px;
+    padding: 10px;
+    width: 80%;
+    border: none;
+    border-radius: 6px;
+    background-color: #7a0d02;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Logout popup */
+.logout-popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logout-popup.show {
+    display: flex;
+}
+
+.popup-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.confirm-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-top:20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: #bdc3c7;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+/* ===== CONTENT ===== */
+.content {
+    flex: 1;
+    padding: 10px;
+    background-color: #EFECE3;
+}
+
+/* Tabs + edit button row */
+.tabs-row {
+    display: flex;
+    align-items: center;
+    position: relative; 
+    margin-bottom: 10px;
+}
+
+/* Wrapper that centers the tabs */
+.tabs-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+}
+
+/* Tab box */
+.tab {
+    width: 180px;
+    height: 38px;
+    background-color: #9fd1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover effect */
+.tab:hover {
+    background-color: #6fbbe6;
+    transform: translateY(-2px);
+}
+
+/* Active tab */
+.tab.active {
+    background-color: #4a9fdc;
+    color: white;
+}
+
+/* Edit profile circular button */
+.edit-profile-btn {
+    width: 45px;
+    height: 45px;
+    background-color: #9fd1f1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.edit-profile-btn img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Hover effect */
+.edit-profile-btn:hover {
+    background-color: #4a9fdc;
+    transform: scale(1.1);
+}
+
+
+/* Dynamic content */
+.dynamic-content {
+    height: 518px;
+    padding: 0px;
+    overflow-y: auto;
+}
+
+/* Welcome screen */
+.welcome-panel {
+    height: 518px;
+    background: linear-gradient(
+        rgba(0,0,0,0.50),
+        rgba(0,0,0,0.50)
+    ), url("../images/defaultBackground.jpg");
+    background-size: cover;
+    background-position: center;
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+}
+
+.slide-in {
+    animation: slideUp 1s ease-out forwards;
+    text-align: center; 
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.welcome-panel h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.welcome-panel p {
+    font-size: 18px;
+}
+
+/* Buttons */
+/* Edit profile button */
+.edit-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #9fd1f1;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    height: 30px;
+    background-color: #c9e3f0;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+/* ==== FOR SUCCESS AND ERROR POP UP ==== */
+.global-popup {
+    position: fixed;
+    top: 20px;              
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 14px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show animation */
+.global-popup.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Success */
+.global-popup.success {
+    background-color: #2ecc71;
+    color: white;
+}
+
+/* Error */
+.global-popup.error {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* ===== EDIT PROFILE ===== */
+/* Modal background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    transition: opacity 0.3s ease;
+}
+
+/* Show modal */
+.modal.show {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Modal content */
+.editProfileModalContent {
+    background-color: #ffffff;
+    border-radius: 12px;
+    max-height: 90vh;
+    max-width: 500px;
+    width: 90%;
+    margin: 60px auto;
+    padding: 25px 30px;
+    overflow-y: auto;    
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    position: relative;
+    transform: translateY(-50px);
+    opacity: 0;
+    animation: slideDown 0.4s forwards;
+}
+
+.modal.show .editProfileModalContent {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Modal header */
+.editProfileModalHeader {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.editProfileModalHeader h2 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin: 0;
+    text-align: center;
+}
+
+.editProfile-close-btn {
+    color: #aaa;
+    position: absolute;
+    right: 0;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.editProfile-close-btn:hover {
+    color: #c0392b;
+}
+
+/* Form groups */
+.editProfile-form-group {
+    margin-bottom: 18px;
+}
+
+.editProfile-form-group label {
+    display: block;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 6px;
+}
+
+.editProfile-form-group input,
+.editProfile-form-group select,
+.editProfile-form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.editProfile-form-group input:focus,
+.editProfile-form-group select:focus,
+.editProfile-form-group textarea:focus {
+    border-color: #4a9fdc;
+    box-shadow: 0 0 5px rgba(74,159,220,0.4);
+    outline: none;
+}
+
+/* Password toggle */
+.editProfile-password-checkbox-group {
+    display: flex;
+    justify-content: flex-end; /* aligns to the right */
+    align-items: center;
+    width: 100%;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    white-space: nowrap;
+}
+
+.editProfile-password-checkbox-group .checkbox-label {
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px; /* space between checkbox and text */       
+}
+
+/* Buttons */
+.editProfile-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.editProfile-btn-save {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.editProfile-btn-save:hover {
+    background-color: #16232b;
+    transform: scale(1.05);
+}

@@ -1,0 +1,472 @@
+/*AL Dashboard*/
+
+/* Module n Assessment Panels */
+.panel {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-top: 20px;
+}
+
+.panel h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.form-actions button{
+    margin-top: 15px;
+    padding: 10px 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #54789c;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.form-actions button:hover {
+    background-color: #62bdb2;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* make the textarea same width as input/select */
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+    padding: 10px 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    font-family: inherit;
+    min-height: 100px;
+}
+
+/* for Mange Modules */
+/* ===== TABLE  ===== */
+.al-title {
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.user-table {
+    width: 100%;
+    table-layout: fixed;
+    font-size: 13px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+}
+
+.user-table th {
+    background-color: #34495e;
+    color: #ffffff;
+    padding: 10px;
+    text-align: left;
+}
+
+.user-table td {
+    padding: 8px;
+    border-bottom: 1px solid #e0e0e0;
+    /*to wrap the text in table*/
+    white-space: normal;
+    word-break: break-word;
+}
+
+/*fix header text alignment*/
+.user-table th:nth-child(6),  /* Status */
+.user-table th:nth-child(7) { /* Actions */
+    text-align: center;
+}
+/*fix column width so it wouldnt keep changing*/
+.user-table th:nth-child(1),
+.user-table td:nth-child(1) {
+    width: 90px;
+}   /* ModuleID */
+
+.user-table th:nth-child(2),
+.user-table td:nth-child(2) {
+    width: 200px;
+}  /* moduleName */
+
+.user-table th:nth-child(3),
+.user-table td:nth-child(3) {
+    width: 260px;
+}  /* moduleDes */
+
+.user-table th:nth-child(4),
+.user-table td:nth-child(4) {
+    width: 150px;
+}  /* Lecturer */
+
+.user-table th:nth-child(5),
+.user-table td:nth-child(5) {
+    width: 120px;
+}  /* Field */
+
+.user-table th:nth-child(6),
+.user-table td:nth-child(6) { /* Status */
+    width: 80px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.user-table th:nth-child(7),
+.user-table td:nth-child(7) {  /* Actions */
+    width: 90px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.user-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+}
+
+.user-actions input {
+    padding: 8px 12px;
+    width: 260px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* ===== Sortable Columns (Manage Modules ONLY) ===== */
+#modulesTable th.sortable {
+    position: relative;
+    cursor: pointer;
+}
+
+/* default (no sort yet) */
+#modulesTable th.sortable::after {
+    content: '⇅';
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    opacity: 0.6;
+}
+
+/* hover hint */
+#modulesTable th.sortable:hover::after {
+    opacity: 1;
+}
+
+/* ascending */
+#modulesTable th.sortable.asc::after {
+    content: '▲';
+    opacity: 1;
+}
+
+/* descending */
+#modulesTable th.sortable.desc::after {
+    content: '▼';
+    opacity: 1;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.icon-btn {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+    background-color: #2c3e50;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.icon-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+.icon-btn:hover {
+    background-color: #16232b;
+    transform: scale(1.1);
+}
+
+.icon-btn:disabled,
+.icon-btn.btn-disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/*edit field */
+.edit-textarea {
+    width: 100%;
+    resize: vertical;
+    box-sizing: border-box;
+    font-size: 13px;
+}
+
+.name-area {
+    min-height: 32px;
+}
+
+.desc-area {
+    min-height: 60px;
+}
+
+/* Global Popup */
+/* for default (warning / info) - yellow */
+.global-popup {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f7f174;
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/*for success popup -green */
+.global-popup.success {
+    background-color: #2ecc71;
+    color: #ffffff;
+}
+
+/*for error one - red*/
+.global-popup.error {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+
+.global-popup.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+
+/* Clear Sort button */
+.clear-sort-btn {
+    margin-left: 8px;
+    padding: 8px 14px;
+    border-radius: 5px;
+    border: none;
+    background-color: #8dc7cc;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.clear-sort-btn:hover {
+    background-color: #7f8c8d;
+}
+
+/* For Assessment Review */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 9999;
+}
+
+.modal-content {
+    background: white;
+    width: 400px;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.modal textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+.icon-btn.approve {
+    background-color: #27ae60;
+}
+.icon-btn.approve:hover {
+    background-color: #1e8449;
+}
+
+.icon-btn.reject {
+    background-color: #e74c3c;
+}
+.icon-btn.reject:hover {
+    background-color: #c0392b;
+}
+
+/* For assessment review table */
+#assessmentTable {
+    table-layout: fixed;
+    width: 100%;
+}
+
+#assessmentTable th,
+#assessmentTable td {
+    vertical-align: middle;
+}
+
+#assessmentTable th:nth-child(4),
+#assessmentTable td:nth-child(4),
+#assessmentTable th:nth-child(5),
+#assessmentTable td:nth-child(5) {
+    text-align: center;
+}
+/* Module */
+#assessmentTable th:nth-child(1),
+#assessmentTable td:nth-child(1) {
+    width: 120px;
+}
+
+/* Lecturer */
+#assessmentTable th:nth-child(2),
+#assessmentTable td:nth-child(2) {
+    width: 150px;
+}
+
+/* Assessment Design */
+#assessmentTable th:nth-child(3),
+#assessmentTable td:nth-child(3) {
+    width: 260px;
+    white-space: normal;
+    word-break: break-word;
+}
+
+/* Status */
+#assessmentTable th:nth-child(4),
+#assessmentTable td:nth-child(4) {
+    width: 110px;
+    text-align: center;
+}
+
+/* Actions / Feedback */
+#assessmentTable th:nth-child(5),
+#assessmentTable td:nth-child(5) {
+    width: 140px;
+    text-align: center;
+    white-space: normal;
+    word-break: break-word;
+}
+
+/* ===== Modal ===== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    width: 420px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+
+.modal-content h3 {
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.modal-content textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 90px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Center buttons */
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.modal-actions button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-actions button:first-child {
+    background: #e74c3c;
+    color: #fff;
+}
+
+.modal-actions button:last-child {
+    background: #bdc3c7;
+}
+
+/* for status wording */
+.status-label {
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+/* Pending */
+.status-label.PENDING {
+    background-color: #f1c40f;
+    color: #000;
+}
+
+/* Approved */
+.status-label.APPROVED {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+/* Rejected */
+.status-label.REJECTED {
+    background-color: #e74c3c;
+    color: #fff;
+}

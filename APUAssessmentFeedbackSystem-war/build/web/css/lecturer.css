@@ -1,0 +1,398 @@
+.panel {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-top: 20px;
+}
+
+/*Design Assessment*/
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+.form-group textarea{
+    height: 10px;
+    width: 50%;
+}
+
+.icon-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: #ffffff;
+}
+
+/*weightage bar*/
+.weightage-wrapper {
+    margin: 20px 0;
+}
+
+.weightage-text {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.weightage-bar-bg {
+    width: 100%;
+    height: 14px;
+    background: #eee;
+    border-radius: 7px;
+}
+
+.weightage-bar {
+    height: 100%;
+    width: 0;
+    border-radius: 7px;
+}
+
+.weightage-bar.ok { background: #2ecc71; }
+.weightage-bar.warn { background: #f1c40f; }
+.weightage-bar.error { background: #e74c3c; }
+
+/*design assessment button*/
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.primary-btn {
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #2c3e50;
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #16232b;
+}
+
+.primary-btn.secondary {
+    background-color: #95a5a6;
+}
+
+.primary-btn.secondary:hover {
+    background-color: #7f8c8d;
+}
+
+.assessment-box {
+    background-color: #f9f9f9;
+    padding: 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    position: relative;
+    border: 1px solid #e0e0e0;
+}
+
+.assessment-box h4 {
+    margin-bottom: 12px;
+    color: #34495e;
+}
+
+.assessment-box label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.assessment-box select,
+.assessment-box input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/*no modules*/
+.empty-message {
+    margin-top: 12px;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+
+/*Manage Assessment*/
+
+/*table*/
+.user-actions input {
+    padding: 8px 12px;
+    width: 260px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+#manageAssessmentTable {
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* Common */
+#manageAssessmentTable th,
+#manageAssessmentTable td {
+    vertical-align: middle;
+}
+
+/* Design ID */
+#manageAssessmentTable th:nth-child(1),
+#manageAssessmentTable td:nth-child(1) {
+    width: 70px;
+}
+
+/* Module */
+#manageAssessmentTable th:nth-child(2),
+#manageAssessmentTable td:nth-child(2) {
+    width: 150px;
+}
+
+/* Assessment Design */
+#manageAssessmentTable th:nth-child(3),
+#manageAssessmentTable td:nth-child(3) {
+    width: 150px;
+    white-space: normal;
+    word-break: break-word;
+}
+
+/* Submitted At */
+#manageAssessmentTable th:nth-child(4),
+#manageAssessmentTable td:nth-child(4) {
+    width: 150px;
+}
+
+/* Status */
+#manageAssessmentTable th:nth-child(5),
+#manageAssessmentTable td:nth-child(5) {
+    width: 110px;
+    text-align: center;
+}
+
+/* Feedback (ONLY when rejected) */
+#manageAssessmentTable th:nth-child(6),
+#manageAssessmentTable td:nth-child(6) {
+    width: 170px;
+    white-space: normal;
+    word-break: break-word;
+}
+
+/* Action (ONLY when rejected) */
+#manageAssessmentTable th:nth-child(7),
+#manageAssessmentTable td:nth-child(7) {
+    width: 90px;
+    text-align: center;
+}
+
+/* ===== Page Title ===== */
+.al-title {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #2c3e50;
+}
+
+/* ===== Actions Row ===== */
+.user-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+}
+
+/* ===== Table Container ===== */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* ===== Table ===== */
+.user-table {
+    width: 100%;
+    table-layout: fixed;
+    font-size: 13px;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+}
+
+
+.user-table th {
+    background-color: #34495e;
+    color: #ffffff;
+    padding: 10px;
+    text-align: left;
+}
+
+.user-table td {
+    padding: 8px;
+    border-bottom: 1px solid #e0e0e0;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.user-actions select {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.icon-btn {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+    background-color: #2c3e50;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.icon-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+.icon-btn:hover {
+    background-color: #16232b;
+    transform: scale(1.1);
+}
+
+/* ===== Status Labels ===== */
+.status-label {
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.status-label.PENDING {
+    background-color: #f1c40f;
+    color: #000;
+}
+
+.status-label.APPROVED {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.status-label.REJECTED {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* ===== Modal Overlay ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* ===== Modal Box ===== */
+.modal-box {
+    background: #ffffff;
+    width: 520px;
+    max-width: 95%;
+    border-radius: 8px;
+    padding: 25px 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    animation: fadeInScale 0.25s ease;
+}
+
+.modal-box h3 {
+    margin-bottom: 18px;
+    color: #2c3e50;
+}
+
+/*Modal Inputs*/
+.modal-box .form-group {
+    margin-bottom: 14px;
+}
+
+.modal-box textarea {
+    width: 100%;
+    resize: none;
+    min-height: 60px;      
+    max-height: 60px;
+    resize: none; 
+    background-color: #f4f6f7;
+    font-size: 13px;
+    padding: 8px 10px;
+    color: #2c3e50;
+}
+
+/*Buttons*/
+.modal-box .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/*Animation */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-box {
+    max-height: 95vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#editAssessmentContainer {
+    max-height: 250px;
+    overflow-y: auto;
+    margin-top: 10px;
+    padding-right: 6px;
+}
+
+/*Key in marks*/
+.user-table textarea {
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;    
+    min-height: 60px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    font-family: inherit;
+}
